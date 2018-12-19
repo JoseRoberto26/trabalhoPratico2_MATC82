@@ -1,0 +1,32 @@
+<doctype html>
+    <html lang="pt-br">
+
+    <head>
+        <title>Quem é quem dos deputados</title>
+        <meta charset="UTF-8" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+        <!--      <script src="node_modules/chart.js/"></script> -->
+    </head>
+
+    <body>
+        <canvas id="newChart" width="400" height="400"></canvas>
+
+        <select id="menudeps" onchange="menuOpcaoEscolhida()"></select>
+        <br/>
+
+        <br/>
+        <img id="fotodep" src="bolso.jpg" width="200" />
+        <br/>
+
+        <h3 id="nomedep"></h3>
+        <h4 id="part-est"></h4>
+
+        <select id="tipoProjeto" onchange="menuProposicaoEscolhida()"></select>
+
+        <button onclick="buscarProjetos()">Buscar Projetos</button>
+
+        <script src="script.js"></script>
+
+    </body>
+
+    </html>
