@@ -25,7 +25,7 @@ function buscarListaDeps(urlInicio) {
     var dados;
 
     req.open("GET", urlInicio);
-    req.onreadystatechange = function (evt) {
+    req.onreadystatechange = function(evt) {
         if (req.readyState === req.DONE &&
             req.status >= 200 && req.status < 300) {
             corpoResposta = JSON.parse(req.responseText);
@@ -54,7 +54,7 @@ function buscarProposicoes(urlInicio) {
     var dados;
 
     req.open("GET", urlInicio);
-    req.onreadystatechange = function (evt) {
+    req.onreadystatechange = function(evt) {
         if (req.readyState === req.DONE &&
             req.status >= 200 && req.status < 300) {
             corpoResposta = JSON.parse(req.responseText);
@@ -85,7 +85,7 @@ function buscarProjetos() {
     var url = "https://www.camara.gov.br/SitCamaraWS/Proposicoes.asmx/ListarProposicoes?sigla=PL&numero=&ano=2017&datApresentacaoIni=&datApresentacaoFim=&parteNomeAutor=".concat(escolhido).concat("+&idTipoAutor=&siglaPartidoAutor=&siglaUFAutor=&generoAutor=&codEstado=&codOrgaoEstado=&emTramitacao=");
     console.log(url);
     req.open("GET", url, true);
-    req.onreadystatechange = function () {
+    req.onreadystatechange = function() {
         if (req.readyState === req.DONE &&
             req.status >= 200 && req.status < 300) {
             corpoResposta = JSON.parse(req.responseText);
@@ -93,8 +93,6 @@ function buscarProjetos() {
             //console.log(listaProjetos);
         }
     }
-    req.header("Access-Control-Allow-Origin", "*");
-    req.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     req.withCredentials = "true";
     req.setRequestHeader("Accept", "application/json");
     req.send();
@@ -117,6 +115,7 @@ function menuCarregarOpcoes() {
         i++;
     }
 }
+
 function menuCarregarProposicoes() {
     var i = 0;
     var menuwdg = document.getElementById("tipoProjeto");
@@ -135,11 +134,11 @@ function menuCarregarProposicoes() {
     }
 }
 
-function totalPorAno(ano){
-    var count; 
-    for (var i = 0; i < listaProjetos.length; i++){
-        if(listaProjetos[i].ano == ano){
-            count ++;
+function totalPorAno(ano) {
+    var count;
+    for (var i = 0; i < listaProjetos.length; i++) {
+        if (listaProjetos[i].ano == ano) {
+            count++;
         }
     }
     return count;
@@ -156,6 +155,7 @@ function menuOpcaoEscolhida() {
         }
     }
 }
+
 function menuProposicaoEscolhida() {
     var escolhido;
     var menuwdg = document.getElementById("tipoProjeto");
