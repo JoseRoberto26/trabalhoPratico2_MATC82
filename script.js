@@ -82,7 +82,7 @@ function buscarProjetos() {
     var tipoEscolhido = menuTipo.value;
     console.log(tipoEscolhido);
     escolhido = escolhido.toLowerCase();
-    var url = "http://www.camara.gov.br/SitCamaraWS/Proposicoes.asmx/ListarProposicoes?sigla=".concat(escolhido).concat("&numero=&ano=2017&datApresentacaoIni=&datApresentacaoFim=&parteNomeAutor=").concat(escolhido).concat("+&idTipoAutor=&siglaPartidoAutor=&siglaUFAutor=&generoAutor=&codEstado=&codOrgaoEstado=&emTramitacao=");
+    var url = "https://www.camara.gov.br/SitCamaraWS/Proposicoes.asmx/ListarProposicoes?sigla=".concat(escolhido).concat("&numero=&ano=2017&datApresentacaoIni=&datApresentacaoFim=&parteNomeAutor=").concat(escolhido).concat("+&idTipoAutor=&siglaPartidoAutor=&siglaUFAutor=&generoAutor=&codEstado=&codOrgaoEstado=&emTramitacao=");
     console.log(url);
     req.open("GET", url, true);
     req.onreadystatechange = function() {
