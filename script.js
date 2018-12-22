@@ -82,10 +82,10 @@ function buscarProjetos() {
     var tipoEscolhido = menuTipo.value;
     console.log(tipoEscolhido);
     escolhido = escolhido.toLowerCase();
-    var url = "https://www.camara.gov.br/SitCamaraWS/Proposicoes.asmx/ListarProposicoes?sigla=".concat(tipoEscolhido).concat("&numero=&ano=2017&datApresentacaoIni=&datApresentacaoFim=&parteNomeAutor=").concat(escolhido).concat("+&idTipoAutor=&siglaPartidoAutor=&siglaUFAutor=&generoAutor=&codEstado=&codOrgaoEstado=&emTramitacao=");
+    var url = "https://dadosabertos.camara.gov.br/SitCamaraWS/Proposicoes.asmx/ListarProposicoes?sigla=".concat(tipoEscolhido).concat("&numero=&ano=2017&datApresentacaoIni=&datApresentacaoFim=&parteNomeAutor=").concat(escolhido).concat("+&idTipoAutor=&siglaPartidoAutor=&siglaUFAutor=&generoAutor=&codEstado=&codOrgaoEstado=&emTramitacao=");
     var encodedUrl = encodeURI(url);
     console.log(encodedUrl);
-    req.open("GET", url, true);
+     req.open("GET", url, true);
     req.onreadystatechange = function() {
         if (req.readyState === req.DONE &&
             req.status >= 200 && req.status < 300) {
@@ -96,7 +96,7 @@ function buscarProjetos() {
     }
     req.withCredentials = "true";
     req.setRequestHeader("Accept", "application/json");
-    req.send();
+    req.send(); 
 }
 
 function menuCarregarOpcoes() {
